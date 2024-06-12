@@ -1,3 +1,6 @@
+'use client';
+
+import { NextUIProvider } from '@nextui-org/react';
 import './global.css';
 
 export default function RootLayout({
@@ -6,8 +9,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="dark">
+      <body>
+        <NextUIProvider>{children}</NextUIProvider>
+      </body>
     </html>
   );
 }
