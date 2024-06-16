@@ -1,0 +1,83 @@
+{
+    req: {
+    cookies: RequestCookies {"refresh_token":{"name":"refresh_token","value":"jS5pGBdwgpvrWlt010VZ_8X4LLXcPxNsZ15h-rmSPz0.d1yc_QJi9Vb1ncf9L9M0BijmjVhkrrhjj5hUBZuy1XU"},"access_token":{"name":"access_token","value":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0OmE0OjlmOmIyOmMwOjcyOjIxOjYyOjkzOjZkOmM1OjQ2OjdjOjAwOjEyOmU0IiwidHlwIjoiSldUIn0.eyJhdWQiOltdLCJhenAiOiIyZTkyZTFiMGM2NjU0NWYyYjI3MjljMThiYWY4N2RlMCIsImV4cCI6MTcxODYwMjQ0OSwiaWF0IjoxNzE4NTE2MDQ5LCJpc3MiOiJodHRwczovL2JpZW4ua2luZGUuY29tIiwianRpIjoiYWJiNmQ4ZTMtNDcyMC00OWNkLTllYTItZmUzYjJiMThmOTg4Iiwib3JnX2NvZGUiOiJvcmdfOGVlMDY0MTgyNjciLCJwZXJtaXNzaW9ucyI6W10sInNjcCI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJvZmZsaW5lIl0sInN1YiI6ImtwXzFjODg2Mjc4Y2FlMzQ4NjY4MDgxOGVlYmNlZGI4YzM2In0.Y1sR3XtW50VpK7c2sTD6KybzfZ4-as_uZ7GeqUl-2kZEulLJXvkmDuEQoBgJeqdvbB6nftMpk4JUkPQaO2uDVpNhyVXPhdWMW2QdXfPQPY4HWzti3OOATztofpFiYx4CPgQXeLvy6slGHlZOAQvyDOWfbMIF8ev3IO6On-SsQeS1VLunjT8G6mj1vKDK8vJlV2D4tQQsjakHiuoNl7l3IbKmZvUlXyYtzeTnN8y6RFkzqmmCZ00LdA0kYRs0mx5lPQXRYMKXSsLxKk2IkwnM_sZTO94Ae6n9YtZWF4dgSWD7u_bwWfuWjcDa8Iisu2no-bvjp3JOmfAmIv5ZTpfm-Q"},"id_token":{"name":"id_token","value":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0OmE0OjlmOmIyOmMwOjcyOjIxOjYyOjkzOjZkOmM1OjQ2OjdjOjAwOjEyOmU0IiwidHlwIjoiSldUIn0.eyJhdF9oYXNoIjoicFhPUGRjUWhDeXZnekl1RTZqLVlqUSIsImF1ZCI6WyIyZTkyZTFiMGM2NjU0NWYyYjI3MjljMThiYWY4N2RlMCJdLCJhdXRoX3RpbWUiOjE3MTg1MTYwNDgsImF6cCI6IjJlOTJlMWIwYzY2NTQ1ZjJiMjcyOWMxOGJhZjg3ZGUwIiwiZW1haWwiOiJkYXZpZGZyYW5jbzkyNjVAZ21haWwuY29tIiwiZXhwIjoxNzE4NTE5NjQ5LCJmYW1pbHlfbmFtZSI6ImZyYW5jbyIsImdpdmVuX25hbWUiOiJkYXZpZCIsImlhdCI6MTcxODUxNjA0OSwiaXNzIjoiaHR0cHM6Ly9iaWVuLmtpbmRlLmNvbSIsImp0aSI6IjdmZWFhZjFkLTIwOGYtNDE0ZC1iOTA0LTFkMDkxMmUwYzUwMSIsIm5hbWUiOiJkYXZpZCBmcmFuY28iLCJvcmdfY29kZXMiOlsib3JnXzhlZTA2NDE4MjY3Il0sInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJUWNKZkI2bDNxRU02dEpBSm1tR1NPdjBSelZMQzdEdnhfVU15anA4LTY0TkhkQ3FiQz1zOTYtYyIsInJhdCI6MTcxODUxNjA0OCwic3ViIjoia3BfMWM4ODYyNzhjYWUzNDg2NjgwODE4ZWViY2VkYjhjMzYiLCJ1cGRhdGVkX2F0IjoxLjcxODUxNTgyNmUrMDl9.LRu9zBzxaXfV_2Pl4j3xXeaZx_jRxMup90eP7-Vkia4lMG8HC2Kq8SvK34lngG3KbKiq1jbjvp-Blv1nOAS8Fp7HRjN7YsyXJyIwNnTonIeHmftN4yLAIFq3hF3ni6wo3LgCpwyALIjPmgQUto7vv2CPMehhihS7jfamzPJ_E4YR8G6JNjJLvYmN-BVv5j7e_GzZubEd0TlY6OVxajnuF1I8z-FoeBAzszCa2TCUFKMx1aMlf8i-pwJAd3KFIE9YFKEGWYIOgtj12PCBkhEgwF5vny3FycJfo-tA4gu3_fMnoPyfbNSj_CELCmNq5ZhY09-clkuZsOe1dXPBspZhqg"}},
+    geo: {},
+    ip: undefined,
+    nextUrl: {
+    href: 'http://localhost:3001/planning',
+    origin: 'http://localhost:3001',
+    protocol: 'http:',
+    username: '',
+    password: '',
+    host: 'localhost:3001',
+    hostname: 'localhost',
+    port: '3001',
+    pathname: '/planning',
+    search: '',
+    searchParams: URLSearchParams {  },
+    hash: ''
+  },
+    url: 'http://localhost:3001/planning',
+    bodyUsed: false,
+    cache: 'default',
+    credentials: 'same-origin',
+    destination: '',
+    headers: {
+    accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    accept-encoding: 'gzip, deflate, br, zstd',
+    accept-language: 'en-US,en;q=0.9',
+    connection: 'keep-alive',
+    cookie: 'refresh_token=jS5pGBdwgpvrWlt010VZ_8X4LLXcPxNsZ15h-rmSPz0.d1yc_QJi9Vb1ncf9L9M0BijmjVhkrrhjj5hUBZuy1XU; access_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0OmE0OjlmOmIyOmMwOjcyOjIxOjYyOjkzOjZkOmM1OjQ2OjdjOjAwOjEyOmU0IiwidHlwIjoiSldUIn0.eyJhdWQiOltdLCJhenAiOiIyZTkyZTFiMGM2NjU0NWYyYjI3MjljMThiYWY4N2RlMCIsImV4cCI6MTcxODYwMjQ0OSwiaWF0IjoxNzE4NTE2MDQ5LCJpc3MiOiJodHRwczovL2JpZW4ua2luZGUuY29tIiwianRpIjoiYWJiNmQ4ZTMtNDcyMC00OWNkLTllYTItZmUzYjJiMThmOTg4Iiwib3JnX2NvZGUiOiJvcmdfOGVlMDY0MTgyNjciLCJwZXJtaXNzaW9ucyI6W10sInNjcCI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJvZmZsaW5lIl0sInN1YiI6ImtwXzFjODg2Mjc4Y2FlMzQ4NjY4MDgxOGVlYmNlZGI4YzM2In0.Y1sR3XtW50VpK7c2sTD6KybzfZ4-as_uZ7GeqUl-2kZEulLJXvkmDuEQoBgJeqdvbB6nftMpk4JUkPQaO2uDVpNhyVXPhdWMW2QdXfPQPY4HWzti3OOATztofpFiYx4CPgQXeLvy6slGHlZOAQvyDOWfbMIF8ev3IO6On-SsQeS1VLunjT8G6mj1vKDK8vJlV2D4tQQsjakHiuoNl7l3IbKmZvUlXyYtzeTnN8y6RFkzqmmCZ00LdA0kYRs0mx5lPQXRYMKXSsLxKk2IkwnM_sZTO94Ae6n9YtZWF4dgSWD7u_bwWfuWjcDa8Iisu2no-bvjp3JOmfAmIv5ZTpfm-Q; id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0OmE0OjlmOmIyOmMwOjcyOjIxOjYyOjkzOjZkOmM1OjQ2OjdjOjAwOjEyOmU0IiwidHlwIjoiSldUIn0.eyJhdF9oYXNoIjoicFhPUGRjUWhDeXZnekl1RTZqLVlqUSIsImF1ZCI6WyIyZTkyZTFiMGM2NjU0NWYyYjI3MjljMThiYWY4N2RlMCJdLCJhdXRoX3RpbWUiOjE3MTg1MTYwNDgsImF6cCI6IjJlOTJlMWIwYzY2NTQ1ZjJiMjcyOWMxOGJhZjg3ZGUwIiwiZW1haWwiOiJkYXZpZGZyYW5jbzkyNjVAZ21haWwuY29tIiwiZXhwIjoxNzE4NTE5NjQ5LCJmYW1pbHlfbmFtZSI6ImZyYW5jbyIsImdpdmVuX25hbWUiOiJkYXZpZCIsImlhdCI6MTcxODUxNjA0OSwiaXNzIjoiaHR0cHM6Ly9iaWVuLmtpbmRlLmNvbSIsImp0aSI6IjdmZWFhZjFkLTIwOGYtNDE0ZC1iOTA0LTFkMDkxMmUwYzUwMSIsIm5hbWUiOiJkYXZpZCBmcmFuY28iLCJvcmdfY29kZXMiOlsib3JnXzhlZTA2NDE4MjY3Il0sInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJUWNKZkI2bDNxRU02dEpBSm1tR1NPdjBSelZMQzdEdnhfVU15anA4LTY0TkhkQ3FiQz1zOTYtYyIsInJhdCI6MTcxODUxNjA0OCwic3ViIjoia3BfMWM4ODYyNzhjYWUzNDg2NjgwODE4ZWViY2VkYjhjMzYiLCJ1cGRhdGVkX2F0IjoxLjcxODUxNTgyNmUrMDl9.LRu9zBzxaXfV_2Pl4j3xXeaZx_jRxMup90eP7-Vkia4lMG8HC2Kq8SvK34lngG3KbKiq1jbjvp-Blv1nOAS8Fp7HRjN7YsyXJyIwNnTonIeHmftN4yLAIFq3hF3ni6wo3LgCpwyALIjPmgQUto7vv2CPMehhihS7jfamzPJ_E4YR8G6JNjJLvYmN-BVv5j7e_GzZubEd0TlY6OVxajnuF1I8z-FoeBAzszCa2TCUFKMx1aMlf8i-pwJAd3KFIE9YFKEGWYIOgtj12PCBkhEgwF5vny3FycJfo-tA4gu3_fMnoPyfbNSj_CELCmNq5ZhY09-clkuZsOe1dXPBspZhqg',
+    host: 'localhost:3001',
+    referer: 'http://localhost:3001/',
+    sec-ch-ua: '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+    sec-ch-ua-mobile: '?0',
+    sec-ch-ua-platform: '"macOS"',
+    sec-fetch-dest: 'document',
+    sec-fetch-mode: 'navigate',
+    sec-fetch-site: 'same-origin',
+    sec-fetch-user: '?1',
+    upgrade-insecure-requests: '1',
+    user-agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+    x-forwarded-for: '::1',
+    x-forwarded-host: 'localhost:3001',
+    x-forwarded-port: '3001',
+    x-forwarded-proto: 'http'
+  },
+    integrity: '',
+    keepalive: false,
+    method: 'GET',
+    mode: 'cors',
+    redirect: 'follow',
+    referrer: 'about:client',
+    referrerPolicy: '',
+    signal: AbortSignal {
+    [Symbol(kEvents)]: SafeMap(0) {},
+    [Symbol(events.maxEventTargetListeners)]: 10,
+    [Symbol(events.maxEventTargetListenersWarned)]: false,
+    [Symbol(kHandlers)]: SafeMap(0) {},
+    [Symbol(kAborted)]: false,
+    [Symbol(kReason)]: undefined,
+    [Symbol(kOnabort)]: undefined,
+    [Symbol(realm)]: {
+    settingsObject: {
+    baseUrl: undefined,
+    origin: [Getter],
+    policyContainer: { referrerPolicy: 'strict-origin-when-cross-origin' }
+  }
+  }
+  }
+  },
+    token: {
+    aud: [],
+    azp: '2e92e1b0c66545f2b2729c18baf87de0',
+    exp: 1718602449,
+    iat: 1718516049,
+    iss: 'https://bien.kinde.com',
+    jti: 'abb6d8e3-4720-49cd-9ea2-fe3b2b18f988',
+    org_code: 'org_8ee06418267',
+    permissions: [],
+    scp: [ 'openid', 'profile', 'email', 'offline' ],
+    sub: 'kp_1c886278cae3486680818eebcedb8c36'
+  }
+  }
