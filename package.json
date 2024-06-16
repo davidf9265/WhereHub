@@ -9,6 +9,7 @@
   "dependencies": {
     "@kinde-oss/kinde-auth-nextjs": "^2.2.13",
     "@kinde-oss/kinde-auth-react": "^4.0.1",
+    "@kinde/management-api-js": "^0.6.0",
     "@nextui-org/react": "^2.4.1",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
