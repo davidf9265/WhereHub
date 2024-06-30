@@ -1,17 +1,21 @@
+'use server';
+
+import { init } from '@kinde/management-api-js';
+import Home from './Home';
 import {
-  RegisterLink,
-  LoginLink,
-} from '@kinde-oss/kinde-auth-nextjs/components';
+  addSingleUserToOrganizationFromKindeManagementAPI,
+  getOrganizationsFromKindeManagementAPI,
+} from './actions';
 
-import styles from './page.module.css';
-import { Button } from '@nextui-org/react';
+export default async function Index() {
+  init();
 
-export default function Index() {
   return (
-    <div className={styles.page}>
-      <LoginLink>Sign in</LoginLink>
-      <RegisterLink>Sign up</RegisterLink>
-      <Button>Button</Button>
+    <div className="flex gap-4 items-center justify-around p-8">
+      <Home
+        getOrganizations={getOrganizationsFromKindeManagementAPI}
+        joinTeam={addSingleUserToOrganizationFromKindeManagementAPI}
+      ></Home>
     </div>
   );
 }

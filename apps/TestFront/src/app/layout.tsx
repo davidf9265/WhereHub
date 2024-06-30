@@ -2,6 +2,7 @@
 
 import { NextUIProvider } from '@nextui-org/react';
 import './global.css';
+import AppHeader from '../components/Header/AppHeader';
 
 export default function RootLayout({
   children,
@@ -11,7 +12,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body>
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider>
+          <AppHeader></AppHeader>
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   );
