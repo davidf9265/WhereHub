@@ -8,9 +8,7 @@ import {
 } from './actions';
 
 export default async function Index() {
-  console.log('initializing');
   init();
-  console.log('rendering');
 
   return (
     <div className="flex gap-4 items-center justify-around p-8">
