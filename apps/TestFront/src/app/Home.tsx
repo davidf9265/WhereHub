@@ -9,9 +9,11 @@ import { Button, Card, CardBody, CardFooter, Divider } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import { addSingleUserToOrganizationFromKindeManagementAPI } from './actions';
+
 interface HomeProps {
   getOrganizations: () => Promise<GetOrganizationsResponse>;
-  joinTeam: (params: any) => Promise<any>;
+  joinTeam: typeof addSingleUserToOrganizationFromKindeManagementAPI;
 }
 
 const Home = ({ getOrganizations, joinTeam, ...props }: HomeProps) => {
@@ -53,7 +55,7 @@ const Home = ({ getOrganizations, joinTeam, ...props }: HomeProps) => {
    * @returns
    */
   const handleJoinTeam = async (orgcode: string | undefined) => {
-    if (!orgcode) {
+    if (!orgcode || !user) {
       // TODO: add warning modal
       return;
     }

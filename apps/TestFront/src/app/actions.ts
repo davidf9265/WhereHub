@@ -29,18 +29,23 @@ export const getOrganizationFromKindeManagementAPI = async (
   return organization;
 };
 
+export interface AddSingleUserToOrganizationFromKindeManagementAPIParams {
+  orgcode: string;
+  requestUser: {
+    id?: string;
+    roles?: Array<string>;
+    permissions?: Array<string>;
+  };
+}
+
 /**
  * @description Add a single user to an organization from the Kinde Management API.
  * @param orgcode The organization code.
  * @param requestUser The user to add to the organization.
  */
 export const addSingleUserToOrganizationFromKindeManagementAPI = async (
-  orgcode: string,
-  requestUser: {
-    id?: string;
-    roles?: Array<string>;
-    permissions?: Array<string>;
-  }
+  orgcode: AddSingleUserToOrganizationFromKindeManagementAPIParams['orgcode'],
+  requestUser: AddSingleUserToOrganizationFromKindeManagementAPIParams['requestUser']
 ): Promise<AddOrganizationUsersResponse> => {
   const addOrganizationParams: AddOrganizationUsersData = {
     orgCode: orgcode,
