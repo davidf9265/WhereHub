@@ -5,6 +5,8 @@ import {
   useKindeBrowserClient,
 } from '@kinde-oss/kinde-auth-nextjs';
 
+import wherehublogo from '../../../public/wherehublogo.svg';
+
 import {
   Dropdown,
   DropdownItem,
@@ -18,6 +20,7 @@ import {
   User,
 } from '@nextui-org/react';
 import React from 'react';
+import Image from 'next/image';
 
 const AppHeader = () => {
   const { user, getToken } = useKindeBrowserClient();
@@ -25,8 +28,14 @@ const AppHeader = () => {
   return (
     <Navbar maxWidth="full">
       <NavbarBrand>
-        {/* <AcmeLogo /> */}
-        <p className="font-bold text-inherit">ACME</p>
+        <Image
+          className="mx-2"
+          src={wherehublogo}
+          width={20}
+          height={20}
+          alt="wherehublogo"
+        />
+        <p className="font-bold text-inherit">WhereHub</p>
       </NavbarBrand>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
