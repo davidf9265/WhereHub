@@ -6,11 +6,27 @@ import { Spinner } from '@nextui-org/react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 
+type WorldType = {
+  type: 'Topology';
+  objects: {
+    land: any;
+    countries: any;
+  };
+  arcs: any;
+  bbox: any;
+  transform: any;
+};
+
 const Planning = () => {
   const { isAuthenticated, isLoading } = useKindeBrowserClient();
   const svgRef = useRef(null);
 
+  /**
+   * @description useEffect hook to render the map (only when the user is authenticated)
+   */
   useEffect(() => {
+    if (isLoading || (!isLoading && !isAuthenticated)) return;
+
     const svg = d3.select(svgRef.current);
     const width = 800;
     const height = 600;
@@ -32,7 +48,9 @@ const Planning = () => {
       .attr('d', path);
 
     d3.json('https://d3js.org/world-110m.v1.json')
-      .then((world) => {
+      .then((fetchedJson) => {
+        if (!fetchedJson) return;
+        const world = fetchedJson as WorldType;
         // Render the land
         svg
           .append('path')
@@ -52,8 +70,13 @@ const Planning = () => {
       .catch((error) => {
         console.error('Error loading the map data', error);
       });
-  }, []);
+  }, [isLoading, isAuthenticated]);
 
+  if (isLoading)
+    return <Spinner className="w-full h-full center" color="white" />;
+  if (!isLoading && !isAuthenticated) {
+    return <h1 className="center">You have to login to access this feature</h1>;
+  }
   return (
     <>
       <div className="grid place-content-center m-10">
@@ -90,6 +113,11 @@ const Planning = () => {
       </div>
       <section>
         <h1>Other people shipped in this plan:</h1>
+        <ul>
+          <li>John Doe</li>
+          <li>Jane Doe</li>
+          <li>John Smith</li>
+        </ul>
       </section>
     </>
   );
