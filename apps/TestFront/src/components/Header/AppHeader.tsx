@@ -23,7 +23,7 @@ const AppHeader = () => {
   const { user, getToken } = useKindeBrowserClient();
 
   return (
-    <Navbar>
+    <Navbar maxWidth="full">
       <NavbarBrand>
         {/* <AcmeLogo /> */}
         <p className="font-bold text-inherit">ACME</p>
