@@ -45,8 +45,13 @@ const AppHeader = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="planning">
+          <Link color="foreground" href="/planning">
             Planning
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/org">
+            My org
           </Link>
         </NavbarItem>
       </NavbarContent>
