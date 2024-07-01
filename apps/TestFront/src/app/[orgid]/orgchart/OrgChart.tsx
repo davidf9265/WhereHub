@@ -1,27 +1,172 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import * as d3 from 'd3';
+
+import { contacts } from '../../../../utils/mocks/contact/contacts';
+import { orgs as organizations } from '../../../../utils/mocks/orgs/orgs';
+import { departments } from '../../../../utils/mocks/departments/departments';
+import { teams } from '../../../../utils/mocks/teams/teams';
 
 const OrgChart = () => {
   const svgRef = useRef();
 
+  const formattedTree = useMemo(() => {
+    type Level = {
+      name: string;
+      children: Level[];
+    };
+
+    // ceo
+    const ceoId = organizations[0].leader;
+    const ceo = contacts.find((contact) => contact.id === ceoId);
+
+    const teamLeads = teams.map((team) => {
+      const teamLead = contacts.find((contact) => contact.id === team.leader);
+      const teamMembers = contacts
+        .filter((contact) => contact.team === team.id)
+        .map((contact) => ({ name: contact.name }));
+
+      return {
+        department: teamLead.department,
+        name: teamLead.name,
+        children: teamMembers,
+      };
+    });
+
+    const departmentHeads = departments.map((department) => {
+      const departmentHead = contacts.find(
+        (contact) => contact.id === department.leader
+      );
+      const departmentTeamLeads = teamLeads.filter(
+        (teamLead) => teamLead.department === department.id
+      );
+      return {
+        name: departmentHead.name,
+        children: departmentTeamLeads,
+      };
+    });
+
+    const orgCeo = {
+      name: ceo.name,
+      children: departmentHeads,
+    };
+
+    return orgCeo;
+
+    console.log(orgCeo);
+
+    // // dept heads
+    // const level2 : Level = {
+    // }
+
+    // // team leads
+    // const level3 : Level = {
+    //   children
+    // }
+
+    // CEO level
+
+    // group the data in a hash table of organizations:
+    // const orgs = {};
+    // contacts.forEach((contact) => {
+    //   if (!orgs[contact.organization]) {
+    //     orgs[contact.organization] = [];
+    //   }
+    //   orgs[contact.organization].push(contact);
+    // });
+
+    // // group the data in a hash table of departments:
+    // const depts = {};
+    // Object.keys(orgs).forEach((org) => {
+    //   orgs[org].forEach((contact) => {
+    //     if (!depts[contact.department]) {
+    //       depts[contact.department] = [];
+    //     }
+    //     depts[contact.department].push(contact);
+    //   });
+    // });
+    // // add the department hash table to the organization hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   orgs[org] = depts;
+    // });
+
+    // // group the data in a hash table of teams:
+    // const teams = {};
+    // Object.keys(orgs).forEach((org) => {
+    //   Object.keys(orgs[org]).forEach((dept) => {
+    //     orgs[org][dept].forEach((contact) => {
+    //       if (!teams[contact.team]) {
+    //         teams[contact.team] = [];
+    //       }
+    //       teams[contact.team].push(contact);
+    //     });
+    //   });
+    // });
+    // // add the team hash table to the department hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   Object.keys(orgs[org]).forEach((dept) => {
+    //     orgs[org][dept] = teams;
+    //   });
+    // });
+    // // update the department hash table to include the team hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   orgs[org] = depts;
+    // });
+
+    // // finally do the same wth users:
+    // const users = {};
+    // Object.keys(orgs).forEach((org) => {
+    //   Object.keys(orgs[org]).forEach((dept) => {
+    //     Object.keys(orgs[org][dept]).forEach((team) => {
+    //       orgs[org][dept][team].forEach((contact) => {
+    //         if (!users[contact._id]) {
+    //           users[contact._id] = contact;
+    //         }
+    //       });
+    //     });
+    //   });
+    // });
+    // // add the user hash table to the team hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   Object.keys(orgs[org]).forEach((dept) => {
+    //     Object.keys(orgs[org][dept]).forEach((team) => {
+    //       orgs[org][dept][team] = users;
+    //     });
+    //   });
+    // });
+    // // update the department hash table to include the team hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   orgs[org] = depts;
+    // });
+    // // update the organization hash table to include the department hash table:
+    // Object.keys(orgs).forEach((org) => {
+    //   orgs[org] = depts;
+    // });
+
+    // console.log(orgs);
+  }, []);
+
   useEffect(() => {
     console.log('OrgChart.tsx');
     // Define the hierarchical data for the org chart
-    const treeData = {
-      name: 'CEO',
-      children: [
-        {
-          name: 'CTO',
-          children: [{ name: 'Developer' }, { name: 'Tester' }],
-        },
-        {
-          name: 'CFO',
-          children: [{ name: 'Accountant' }, { name: 'Financial Analyst' }],
-        },
-      ],
-    };
+    // const treeData = {
+    //   name: 'CEO',
+    //   children: [
+    //     {
+    //       name: 'CTO',
+    //       children: [{ name: 'Developer' }, { name: 'Tester' }],
+    //     },
+    //     {
+    //       name: 'CFO',
+    //       children: [{ name: 'Accountant' }, { name: 'Financial Analyst' }],
+    //     },
+    //   ],
+    // };
+
+    const treeData = formattedTree;
+
+    console.log('formattedTree >>> ', formattedTree);
 
     // Set up the dimensions and margins for the SVG element
     const margin = { top: 100, right: 90, bottom: 30, left: 90 };
@@ -31,12 +176,16 @@ const OrgChart = () => {
     const containerHeight = svgRef.current.parentElement.clientHeight;
 
     console.log('containerWidth >>> ', containerWidth);
+    function zoomed(event) {
+      svg.attr('transform', event.transform);
+    }
 
     // Create an SVG container
     const svg = d3
       .select(svgRef.current)
       .attr('width', '100%')
       .attr('height', '100%')
+      .call(d3.zoom().scaleExtent([0.5, 5]).on('zoom', zoomed))
       .append('g')
       .attr(
         'transform',
@@ -44,7 +193,11 @@ const OrgChart = () => {
       );
 
     // Create a tree layout with the specified size
-    const treemap = d3.tree().size([height, width]);
+    const treemap = d3
+      .tree()
+      .size([height, width])
+      .nodeSize([100, 200])
+      .separation((a, b) => (a.parent === b.parent ? 1 : 2));
 
     // Convert the flat data into a hierarchy
     const root = d3.hierarchy(treeData, (d) => d.children);
