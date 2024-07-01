@@ -1,3 +1,6 @@
+// tslint:disable
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 'use client';
 
 import React, { useEffect, useMemo, useRef } from 'react';
@@ -354,7 +357,12 @@ const OrgChart = () => {
     update(root);
   }, []);
 
-  return <svg ref={svgRef}></svg>;
+  return (
+    <svg
+      className=" mr-10 border border-gray-600 rounded-sm"
+      ref={svgRef}
+    ></svg>
+  );
 };
 
 export default OrgChart;
