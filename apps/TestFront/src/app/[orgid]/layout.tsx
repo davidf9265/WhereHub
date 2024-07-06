@@ -29,7 +29,7 @@ export default function OrgLayout({
     const route = routes.find((route) => route.key === key);
     console.log('params.orgid >>> ', params.orgid);
     if (route) {
-      router.push('org/' + route.address);
+      router.push(`/${params.orgid}/${route.address}`);
     }
   };
   return (
