@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import { Spinner } from '@nextui-org/react';
 
 import * as d3 from 'd3';
@@ -18,15 +17,12 @@ type WorldType = {
 };
 
 const Planning = () => {
-  const { isAuthenticated, isLoading } = useKindeBrowserClient();
   const svgRef = useRef(null);
 
   /**
    * @description useEffect hook to render the map (only when the user is authenticated)
    */
   useEffect(() => {
-    if (isLoading || (!isLoading && !isAuthenticated)) return;
-
     const svg = d3.select(svgRef.current);
     const width = 800;
     const height = 600;
@@ -70,23 +66,14 @@ const Planning = () => {
       .catch((error) => {
         console.error('Error loading the map data', error);
       });
-  }, [isLoading, isAuthenticated]);
+  }, []);
 
-  if (isLoading)
-    return <Spinner className="w-full h-full center" color="white" />;
-  if (!isLoading && !isAuthenticated) {
-    return <h1 className="center">You have to login to access this feature</h1>;
-  }
   return (
     <>
       <div className="grid place-content-center m-10">
-        {isLoading && <Spinner color="white" />}
-        {!isLoading && !isAuthenticated && <div>you may have to login</div>}
-        {isAuthenticated && (
-          <div>
-            <h1 className="font-bold text-2xl">Plan your next adventure!</h1>
-          </div>
-        )}
+        <div>
+          <h1 className="font-bold text-2xl">Plan your next adventure!</h1>
+        </div>
       </div>
       <div className="grid place-content-center z-1">
         <svg ref={svgRef} width={800} height={600} className="z-2">
