@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "dev:tf": "nx run TestFront:dev --port=3001"
+    "dev": "nx dev wh-front --port 3001"
   },
   "private": true,
   "dependencies": {

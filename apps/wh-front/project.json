@@ -1,9 +1,9 @@
 {
-  "name": "TestFront",
+  "name": "wh-front",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/TestFront",
+  "sourceRoot": "apps/wh-front",
   "projectType": "application",
   "tags": [],
-  "// targets": "to see all targets run: nx show project TestFront --web",
+  "// targets": "to see all targets run: nx show project wh-front --web",
   "targets": {}
 }
