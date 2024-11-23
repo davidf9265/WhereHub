@@ -1,10 +1,5 @@
 'use client';
 
-import {
-  GetOrganizationsResponse,
-  organization,
-} from '@kinde/management-api-js';
-import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import { Button, Card, CardBody, CardFooter, Divider } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useMemo, useState } from 'react';
@@ -13,15 +8,14 @@ import { addSingleUserToOrganizationFromKindeManagementAPI } from './actions';
 import { Team } from '../../types/Team';
 
 interface HomeProps {
-  getOrganizations: () => Promise<GetOrganizationsResponse>;
-  joinTeam: typeof addSingleUserToOrganizationFromKindeManagementAPI;
+  // extends ReturnType<typeof addSingleUserToOrganizationFromKindeManagementAPI> {
+  // getOrganizations: () => void;
 }
-
-const Home = ({ getOrganizations, joinTeam, ...props }: HomeProps) => {
-  const [orgs, setOrgs] = useState<Array<organization>>([]);
+const Home = ({ ...props }: HomeProps) => {
+  // const [orgs, setOrgs] = useState<Array<organization>>([]);
   const [teams, setTeams] = useState<Array<Team>>([]);
 
-  const { user } = useKindeBrowserClient();
+  // const { user } = useKindeBrowserClient();
   const router = useRouter();
 
   /**
@@ -36,7 +30,7 @@ const Home = ({ getOrganizations, joinTeam, ...props }: HomeProps) => {
       orgsResponse.organizations &&
       orgsResponse.organizations.length > 0
     ) {
-      setOrgs(orgsResponse.organizations);
+      // setOrgs(orgsResponse.organizations);
     }
   };
 
@@ -68,12 +62,11 @@ const Home = ({ getOrganizations, joinTeam, ...props }: HomeProps) => {
    * @returns
    */
   const handleJoinTeam = async (orgcode: string | undefined) => {
-    if (!orgcode || !user) {
-      // TODO: add warning modal
-      return;
-    }
-
-    await joinTeam(orgcode, user);
+    // if (!orgcode || !user) {
+    // TODO: add warning modal
+    // return;
+    // }
+    // await joinTeam(orgcode, user);
   };
   useEffect(() => {
     // fetchOrgs();

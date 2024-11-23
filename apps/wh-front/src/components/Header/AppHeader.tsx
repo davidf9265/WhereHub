@@ -44,6 +44,11 @@ const AppHeader = () => {
             Planning
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/ai-assistant">
+            AI Assistant
+          </Link>
+        </NavbarItem>
         {/* {userOrg && userOrg.name ? (
           <NavbarItem>
             <Link color="foreground" href={`/${userOrg.code}/dashboard`}>
