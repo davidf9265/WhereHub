@@ -1,6 +1,6 @@
 {
   "name": "@bien-fronts/source",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "dev:tf": "nx run TestFront:dev --port=3001"
