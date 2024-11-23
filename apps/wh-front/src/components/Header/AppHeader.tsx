@@ -1,12 +1,5 @@
 'use client';
 
-import {
-  LoginLink,
-  RegisterLink,
-  LogoutLink,
-  useKindeBrowserClient,
-} from '@kinde-oss/kinde-auth-nextjs';
-
 import wherehublogo from '../../../public/wherehublogo.svg';
 
 import {
@@ -25,41 +18,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const AppHeader = () => {
-  const {
-    user,
-    organization: _userOrg,
-    getToken,
-    getOrganization,
-  } = useKindeBrowserClient();
-
   const [userOrg, setUserOrg] = useState(null);
-
-  async function getUserOrganizations() {
-    if (user && _userOrg) {
-      const token = await getToken();
-      const org = await fetch(
-        `/management/organizations/getOneById?code=${_userOrg.orgCode}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      ).then((res) => {
-        return res.json();
-      });
-      console.log('org', org);
-
-      if (org) {
-        setUserOrg(org);
-      }
-    }
-  }
-
-  useEffect(() => {
-    getUserOrganizations();
-  }, [_userOrg]);
 
   return (
     <Navbar maxWidth="full">
@@ -85,27 +44,28 @@ const AppHeader = () => {
             Planning
           </Link>
         </NavbarItem>
-        {userOrg && userOrg.name ? (
+        {/* {userOrg && userOrg.name ? (
           <NavbarItem>
             <Link color="foreground" href={`/${userOrg.code}/dashboard`}>
               {userOrg.name}
             </Link>
           </NavbarItem>
-        ) : null}
+        ) : null} */}
       </NavbarContent>
 
       <NavbarContent as="div" justify="end">
-        {user ? (
+        {true ? (
           <Dropdown placement="bottom-end">
             <DropdownTrigger>
-              <User
+              user
+              {/* <User
                 name={user?.given_name + ' ' + user?.family_name}
                 description="Product Designer"
                 avatarProps={{
                   src: user?.picture ?? undefined,
                 }}
                 as="button"
-              />
+              /> */}
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions" variant="flat">
               <DropdownItem key="profile" className="h-14 gap-2">
@@ -121,17 +81,20 @@ const AppHeader = () => {
                 Help & Feedback
               </DropdownItem>
               <DropdownItem key="logout" color="danger">
-                <LogoutLink postLogoutRedirectURL="/">Logout</LogoutLink>
+                Logout
+                {/* <LogoutLink postLogoutRedirectURL="/">Logout</LogoutLink> */}
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
         ) : (
           <>
             <NavbarItem>
-              <LoginLink>Sign in</LoginLink>
+              Sign in
+              {/* <LoginLink>Sign in</LoginLink> */}
             </NavbarItem>
             <NavbarItem>
-              <RegisterLink>Sign up</RegisterLink>
+              Sign up
+              {/* <RegisterLink>Sign up</RegisterLink> */}
             </NavbarItem>
           </>
         )}
